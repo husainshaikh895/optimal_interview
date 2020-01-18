@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<style type="text/css">
+</style>
+<div class="container">
+    <form class="col s12" name='login' action="{% url 'mainapp:homepage' %}" method="POST">
+        {% csrf_token %}
+        <div class="card active">
+            <div class="container">
+                <div class="card-title center"><strong>Login to your Account</strong></div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="username" type="text" class="validate">
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row center">
+                    <a class="waves-effect waves-dark btn btn-lg blue btn1">Login</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+{% endblock %}

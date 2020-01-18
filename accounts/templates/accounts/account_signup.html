@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+<style type="text/css">
+    .signup{
+        width: auto;
+    }
+
+    @keyframes appear{
+        from{
+            width: 800px;
+            opacity: 30%;
+            
+        }
+        to{
+            width : 1010px;
+            opacity: 1;
+        }
+    }
+</style>
+<div class="container">
+    <form class="col s12" name='signup' action="{% url 'accounts:account_signup' %}" method="POST">
+        {% csrf_token %}
+        <div class="card active signup">
+            <div class="container">
+                <div class="card-title center"><strong>New User Registration</strong></div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="username" type="text" class="validate">
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="cpassword" type="password" class="validate">
+                        <label for="cpassword">Confirm Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="text" class="validate">
+                        <label for="email">Email Address</label>
+                    </div>
+                </div>
+                <div class="row center">
+                    <input type='submit' name='signup' class="waves-effect waves-dark btn btn-lg btn1" value='Signup'>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+{% endblock %}

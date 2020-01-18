@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+<style type="text/css">
+</style>
+
+
+
+{% block content %}
+<div class='first card'>
+    <div class="history">
+        {{loaded_data | safe}}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+body{
+	margin:0;
+	padding: 0;
+
+}
+
+.section{
+	display:flex;
+	justify-content: center;
+	height: 100vh;
+	border:20px solid magenta;
+}
+
+.mls{
+	display:flex;
+	flex-grow: 1.5;
+	padding: 120px;
+	justify-content: center;
+	border: 2px solid black;
+}
+
+.form{
+	display: flex;
+	flex-grow: 5;
+	padding: 120px;
+	justify-content: center;
+	border: 2px solid black;
+}
+.button{
+	padding: 120px;
+	flex-grow: 0;
+	text-align: center;
+	justify-content: center;
+	border: 20px solid black;
+	
+}
+
+
+.card{
+
+}
+
+.white-text{
+	color: white;
+}
+
+.back-green{
+	background: linear-gradient(45deg,teal, lightgreen);
+}
+
+.back-red{
+	background: linear-gradient(45deg,red, yellow);
+}
+
+.back-purple{
+	background: linear-gradient(45deg,blue, purple);
+}
