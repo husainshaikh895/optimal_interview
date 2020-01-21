@@ -14,20 +14,23 @@
         transition: opacity 1s ease-out;
         
     }
+
+    .full{
+        display:flex;
+    }
     
     .left{
         
         overflow: auto;
-        width: 580px;
+        width: 50vw;
         height: 85vh;
         resize: both;
         animation: unfold 1.5s ease-in-out;
-        transition: all 0.5s ease;
+        transition: box-shadow 0.5s ease;
+        border-radius:5px;
+        border: 1px solid teal;
     }
 
-    .right{
-        display: flex;
-    }
 
     .total{
         opacity: 10%;
@@ -58,6 +61,10 @@
         font-family: Rubik, sans-serif;
         animation: appear 0.7s ease-in-out;
 
+    }
+
+    .total_form{
+        color:white;
     }
 
     .btn {
@@ -182,7 +189,7 @@
     $('.datepicker').datepicker();
   });
 </script>
-<div class='container card main-card purple lighten-2 z-depth-3'>
+<div class='container card main-card purple lighten-2 center'>
     {% if label and name%}
     <script>
             M.toast({html: 'Saved to Database', classes: 'rounded'})
@@ -193,10 +200,10 @@
             M.toast({html: 'Total Saved', classes: 'rounded'})
     </script>
     {% endif %}
-    <div class='row'>
+    <div class='row full'>
         <div class='col card teal'>
             <div class="row teal">
-                <div class="container center">
+                <div class="container center s4">
                     <div class="card hoverable statistics">
                         <div class="card-title center blue lighten-2 white-text">
                             <strong>Statistics</strong>
@@ -212,7 +219,7 @@
                     </div>
                 </div>
             </div>
-            <div class='row card right2 teal'>
+            <div class='row card right2 s4 teal'>
                 <div class='container valign-wrapper'>
                     <div class="card">
                         <div class="card-title center blue lighten-2 white-text">
@@ -225,25 +232,26 @@
                     </div>
                 </div>
             </div>
-            <div class='container center valign-wrapper'>
-                <div class="row center">
+            <!-- <div class='container center valign-wrapper'>
+                <div class="row center total-form">
                     <form name='total_form' method='POST' action="{% url 'mainapp:homepage' %}">
                         {% csrf_token %}
-                        <div class="col s8 center input-field">
-                            <input type="text" placeholder="Total Candidates" name='total'>
+                        <div class="col center input-field">
+                            <input type="text" placeholder="Total Candidates" name='total' style='{color:white;'>
                         </div>
-                        <div class="col s1 center">
+                        <div class="col center">
                             <button type="submit" class="waves-effect waves-dark btn-large btn1 btn sub select" value='SAVE' name='save'><b>SAVE</b></button>
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> -->
             <!-- end of row2 -->
         </div>
         <!-- end of column 2 -->
-        <form name='main-form' method='POST' action="{% url 'mainapp:homepage' %}">
-            {% csrf_token %}
-            <div class='col left card hoverable'>
+        <div class='col left card hoverable'>
+            <form name='main-form' method='POST' action="{% url 'mainapp:homepage' %}">
+                {% csrf_token %}
+            
                 <!-- <div class="container"> -->
                 <div class='card-title center blue lighten-2 white-text'>
                     <strong>Enter The Candidate's Data</strong>

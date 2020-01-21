@@ -5,6 +5,10 @@
         width: auto;
     }
 
+    .signup-container{
+        padding:20px;
+    }
+
     @keyframes appear{
         from{
             width: 800px;
@@ -21,7 +25,7 @@
     <form class="col s12" name='signup' action="{% url 'accounts:account_signup' %}" method="POST">
         {% csrf_token %}
         <div class="card active signup">
-            <div class="container">
+            <div class="container signup-container">
                 <div class="card-title center"><strong>New User Registration</strong></div>
                 <div class="row">
                     <div class="input-field col s6">
@@ -58,7 +62,10 @@
                     </div>
                 </div>
                 <div class="row center">
-                    <input type='submit' name='signup' class="waves-effect waves-dark btn btn-lg btn1" value='Signup'>
+                    <button type='submit' name='signup' class="waves-effect waves-dark btn btn-lg btn1" value='Signup'>Signup</button>
+                </div>
+                <div class="center">
+                <a href="{% url 'accounts:account_login' %}">Don't have an Account yet? Register Here</a></div>
                 </div>
             </div>
         </div>
