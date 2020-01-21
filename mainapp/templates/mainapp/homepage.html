@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 <style>
+    body{
+        background-color: red;
+    }
     .left, .right2{
         transition: opacity 0.9s ease-in-out;
         overflow: auto;
@@ -23,9 +26,11 @@
         
         overflow: auto;
         width: 50vw;
-        height: 85vh;
+        height: 550px;
+        max-height: 100%
         resize: both;
         animation: unfold 1.5s ease-in-out;
+        animation-delay: -0.4s;
         transition: box-shadow 0.5s ease;
         border-radius:5px;
         border: 1px solid teal;
@@ -43,7 +48,7 @@
 
     .main-card{
         /*margin-left: 100px;*/
-        background: linear-gradient(170deg, #EECDA3, #EF629F);
+        background: linear-gradient(178deg, #EECDA3, #EF629F);
         width: 100%;
     }
 
@@ -51,16 +56,22 @@
     .buttons{
         display: flex;
         flex-direction: column;
-        width:200px;
-        animation: widthdown 1s ease-in-out;
+        width:16vw;
+        animation: widthdown 1.2s ease-in-out;
         transition: all 0.5s ease-in-out;
         border-radius: 3%;
     }
+
+
 
     .statistics{
         font-family: Rubik, sans-serif;
         animation: appear 0.7s ease-in-out;
 
+    }
+
+    .mls-grad{
+        background: teal;
     }
 
     .total_form{
@@ -125,7 +136,7 @@
     }
 
     #get{
-        animation: border_rad 1s ease;
+        animation: border_rad 2s;
         animation-iteration-count: infinite;
     }
 
@@ -136,17 +147,16 @@
     
     @keyframes border_rad{
         50%{
-            border-radius:10%;
+            border-radius: 10%;
         }
     }
 
     @keyframes widthdown{
         from{
-            width : 130px;
+            width : 12vw;
             opacity: 10%;
         }
         to{
-            width: 200px;
             opacity: 100%;
         }
     }
@@ -171,11 +181,10 @@
 
     @keyframes unfold{
         0%{
-            height: 50vh;
+            height: 5vh;
             opacity: 0.3;
         }
         100%{
-            height: 85vh;
             opacity: 1;
         }
     }
@@ -201,8 +210,8 @@
     </script>
     {% endif %}
     <div class='row full'>
-        <div class='col card teal'>
-            <div class="row teal">
+        <div class='col card mls-grad'>
+            <div class="row mls-grad">
                 <div class="container center s4">
                     <div class="card hoverable statistics">
                         <div class="card-title center blue lighten-2 white-text">
@@ -219,7 +228,7 @@
                     </div>
                 </div>
             </div>
-            <div class='row card right2 s4 teal'>
+            <div class='row card right2 s4 mls-grad'>
                 <div class='container valign-wrapper'>
                     <div class="card">
                         <div class="card-title center blue lighten-2 white-text">
@@ -333,7 +342,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col buttons-col md4">
                 <div class="container buttons">
                     <div class="center card white lighten-3 buttons hoverable">
                         <div class="row"><button type="submit" value="REJECT" class="waves-effect waves-dark btn-large btn btn1 sub reject" name='reject' style="color:white;"><b>REJECT</b></button></div>
