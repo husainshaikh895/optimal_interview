@@ -20,19 +20,94 @@
         background-color: #f0f0f0;
     }
 
-    main {
+    /*main {
         flex: 10px auto;
+    }*/
+
+    .loader-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #333333;
+        z-index: 5;
+        justify-content: center;
+        align-items: center;
+
     }
 
-    
+    /*html,body{
+    background:#000;
+    margin:0;
+}*/
+    .centered {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        filter: blur(10px) contrast(20);
+    }
 
+    .blob-1,
+    .blob-2 {
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        background: purple;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .blob-1 {
+        left: 20%;
+        animation: osc-l 1s ease infinite;
+    }
+
+    .blob-2 {
+        left: 80%;
+        animation: osc-r 1s ease infinite;
+        background: #0ff;
+    }
+
+    @keyframes osc-l {
+        0% {
+            left: 20%;
+        }
+
+        50% {
+            left: 50%;
+        }
+
+        100% {
+            left: 20%;
+        }
+    }
+
+    @keyframes osc-r {
+        0% {
+            left: 80%;
+        }
+
+        50% {
+            left: 50%;
+        }
+
+        100% {
+            left: 80%;
+        }
+    }
     </style>
-
-
     <script type="text/javascript">
-    
+        $(window).on('load', function(){
+            $(".loader-wrapper").fadeOut('slow');
+        });
     </script>
-
 </head>
 
 <body>
@@ -59,6 +134,16 @@
             </div>
         </div>
     </footer>
+    <div class='loader-wrapper'>
+        <span class='loader center'>
+            <span class="loader-inner">
+                <div class="centered">
+                    <div class="blob-1"></div>
+                    <div class="blob-2"></div>
+                </div>
+            </span>
+        </span>
+    </div>
 </body>
 
 </html>
